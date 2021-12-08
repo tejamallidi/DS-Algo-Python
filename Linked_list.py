@@ -55,6 +55,55 @@ class LinkedList:
             itr = itr.next
             count += 1
 
+    def insert_at(self, index, data):
+        if index < 0 or index >= self.get_length():
+            raise Exception('Invalid index')
+        if index == 0:
+            self.insert_at_begining(data)
+        itr = self.head
+        count = 0
+        while itr:
+            if count == index-1:
+                node = Node(data, itr.next)
+                itr.next = node
+                break
+            itr = itr.next
+            count += 1
+
+    def insert_after_value(self, data_after, data_to_insert):
+        if self.get_length() == 0:
+            self.insert_at_begining(data_to_insert)
+            return
+        # Search for first occurance of data_after value in linked list
+        count = 0
+        itr = self.head
+        while itr:
+            if itr.data == data_after:
+                # Now insert data_to_insert after data_after node
+                node = Node(data_to_insert, itr.next)
+                itr.next = node
+                break
+            itr = itr.next
+            count += 1
+
+    def remove_by_value(self, data):
+        if self.head is None:
+            return
+
+        if self.head.data == data:
+            self.head = self.head.next  # we are pointing the single node to None
+            return
+        # Remove first node that contains data
+        try:
+            itr = self.head
+            while itr:
+                if itr.next.data == data:
+                    itr.next = itr.next.next
+                    break
+                itr = itr.next
+        except AttributeError:
+            print('Element not found in the linkedlist.')
+
     def print(self):
         if self.head is None:
             print('Linked List is empty')
@@ -77,5 +126,8 @@ if __name__ == '__main__':
     ll.insert_values(['Apple', 'Banana', 'Carrot', 'Dry fruits'])
     length = ll.get_length()
     print(length)
-    ll.remove_at(-2)
+    ll.insert_after_value('Banana', 'Mango')
+    ll.insert_at(3, "Dates")
+    # ll.remove_at(-2)
+    # ll.remove_by_value('Banana')
     ll.print()
