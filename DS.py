@@ -34,3 +34,59 @@ insertion at last position is O(n)
 deletion at last position is O(n)
 If you know the index of the element, it is better to go with list
 '''
+
+'''
+HashMap/Dictionary
+To find a record, it is efficient to use a dictionary
+It will store the data in random memory locations using a hash function
+Duplicate keys are not allowed in a dictionary
+Lookup - O(1)
+Insertion/Deletion - O(1)
+'''
+# stock_price = {}
+# stock_price['dec 9'] = 147.29
+# stock_price['dec 9'] = 148.39
+# print(stock_price['Dec 9']) # this should throw KeyError as 'Dec 9' doesn't exist
+# print(stock_price.get('Dec 9')) # this returns 'None' as 'Dec 9' doesn't exist
+# Using del to remove a dict
+# raises exception of KeyError if not found
+# del stock_price['dec 9']
+# print(stock_price)
+
+# Using pop() to remove a dict pair
+# it will not throw an error if we give a pair and key doesn't exist
+# removed_value = stock_price.pop('dec 9', 'No Key found')
+# print("The dictionary after remove is : " + str(stock_price))
+# print("The removed key's value is : " + str(removed_value))
+
+
+'''
+Stack(LIFO)
+Push/Pop element - O(1)
+Search - O(n)
+collections.deque(internally using doubly linked list) is used as stack in python 
+As list uses dynamic resizing once it is full, it will waste lots of memory hence we don't use list as stack
+'''
+# stack = deque()
+# stack.append('I am first item')
+# stack.append('I am second item')
+# stack.append('I am third item')
+# stack.append('I am fourth item')
+# stack.pop()
+# print(stack)
+
+
+'''
+Queue(FIFO)
+collections.deque(internally using doubly linked list) is used as queue in python
+As list uses dynamic resizing once it is full, it will waste lots of memory hence we don't use list as queue
+Access/Search - O(n)
+Insertion/Deletion - O(1)
+'''
+from collections import deque
+q = deque()
+q.appendleft(5)
+q.appendleft(6)
+q.appendleft(7)
+# q.pop()
+print(q)
