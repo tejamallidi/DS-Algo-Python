@@ -83,10 +83,18 @@ As list uses dynamic resizing once it is full, it will waste lots of memory henc
 Access/Search - O(n)
 Insertion/Deletion - O(1)
 '''
-from collections import deque
-q = deque()
-q.appendleft(5)
-q.appendleft(6)
-q.appendleft(7)
-# q.pop()
-print(q)
+# from collections import deque
+# q = deque()
+# q.appendleft(5)
+# q.appendleft(6)
+# q.appendleft(7)
+# # q.pop()
+# print(q)
+
+
+'''
+TREE
+Best used to store info in a hierarchy 
+example - folders,subfolders,files
+Root Node --> Node
+'''
