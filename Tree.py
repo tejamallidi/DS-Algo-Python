@@ -40,7 +40,8 @@ class TreeNode:
             print(prefix + str(self.data['name']) +
                   ' ('+str(self.data['designation'])+')')
         # traverse through children recursively
-        # if self.get_level() <= level: # this is the code to be added for assignment to print the tree till that level
+        # if self.get_level() > level:
+            # return # this is the code to be added for assignment 2 to print the tree till that level
         if self.children:
             for child in self.children:
                 child.print_tree(param)

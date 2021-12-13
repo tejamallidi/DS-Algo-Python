@@ -97,4 +97,44 @@ TREE
 Best used to store info in a hierarchy 
 example - folders,subfolders,files
 Root Node --> Node
+
+Binary Tree --> maximum of 2 children
+left side - small elements than parent
+right side - bug elements than parent
+elements are always unique
+Search, Insert, Delete  - O(log n)
+
+To search in a BST - two traversal techniques
+Breadth First Search(BFS)
+Depth First Search(DFS)
+ 1. In order traversal
+ 2. Pre order traversal
+ 3. Post order traversal
+BST looks like this - 15 root node
+            15
+    
+    12              27     
+
+7       14      20      88
+                    
+                    23
+
+In order traversal: [7,12,14,15,20,23,27,88] - columns bottom to top (ascending order) left,root,right
+Pre order traversal: [15,12,7,14,27,20,23,88] - root,left,right
+Post order traversal:[7,14,12,23,20,88,27,15] - left,right,root
+Binary tree is a special case of a general tree where you can have maximum 2 children for any given node.
+They are useful in implementing set/map class in different programming languages. They provide efficient way of search an element in log n complexity. There are various traversal schemes you can use such as breadth first search and depth first search. In depth first search you can use in order traversal, pre order traversal and post order traversal schemes that will benefit in different scenarious. For example  in order traversal gives you a sorted list of elements in a tree. After going through theory we will implement binary tree, rather binary search tree in python. Binary search tree is also known as BST that is basically a binary tree with some order of elements.
+
+Delete a node in a BST
+Three cases to e considered
+1. node with no child
+2. node with one child
+3. node with two children - find_min in the right subtree of that node or find_max from left subtree and copy minimum/maximum to the current position and delete the duplicate from right/left subtree
+'''
+
+
+'''
+GRAPH
+Directed or Undirected Data structures
+Diff between tree and graph is the direction - Tree will have only one path between two nodes.
 '''
