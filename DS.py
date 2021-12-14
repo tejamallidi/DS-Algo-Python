@@ -138,3 +138,10 @@ GRAPH
 Directed or Undirected Data structures
 Diff between tree and graph is the direction - Tree will have only one path between two nodes.
 '''
+
+'''
+BINARY SEARCH
+Works best on a sorted list
+In k iterations, we will reduce the elements to be processed by n/2^k
+Run time complexity to search for k will be O(log n) 
+'''
