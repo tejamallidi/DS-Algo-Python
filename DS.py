@@ -145,3 +145,13 @@ Works best on a sorted list
 In k iterations, we will reduce the elements to be processed by n/2^k
 Run time complexity to search for k will be O(log n) 
 '''
+
+'''
+QUICK SORT - Divide and Conquer Type
+Hoare Partition Scheme - left most element - pivot
+Lomuto Partition Scheme - right most element - pivot
+Select 1st index - pivot, put that in the correct position
+such that left side elements < pivot, right side elements > pivot - Repeat this.
+Putting the pivot in the right position - partition 
+Two pointers - start, end. start will be looking for elements greater than pivot, end is looking for elements less than pivot, once we find them swap them.
+'''
