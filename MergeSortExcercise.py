@@ -31,3 +31,66 @@ elements = [
         { 'name': 'vignesh',  'age': 21,  'time_hours': 2.5},
     ]
 '''
+
+
+def merge_sort(arr, key, descending):
+    if len(arr) <= 1:
+        return
+    # calculate mid index
+    mid = len(arr)//2
+
+    # split the arr to two parts
+    left = arr[:mid]
+    right = arr[mid:]
+
+    # apply merge_sort fumction on them
+    merge_sort(left, key, descending)
+    merge_sort(right, key, descending)
+
+    # merge the sorted arrays,
+    merge_two_sorted_lists(left, right, arr, key, descending)
+
+
+def merge_two_sorted_lists(a, b, arr, key, descending):
+    len_a = len(a)
+    len_b = len(b)
+
+    i = j = k = 0
+
+    while i < len_a and j < len_b:
+        if not descending:
+            if a[i][key] <= b[j][key]:  # compare each element in two lists
+                arr[k] = a[i]  # put the shortest element in the arr
+                i += 1
+            else:
+                arr[k] = b[j]
+                j += 1
+            k += 1
+        else:
+            if a[i][key] > b[j][key]:  # compare each element in two lists
+                arr[k] = a[i]  # put the shortest element in the arr
+                i += 1
+            else:
+                arr[k] = b[j]
+                j += 1
+            k += 1
+    while i < len_a:
+        arr[k] = a[i]
+        i += 1
+        k += 1
+    while j < len_b:
+        arr[k] = b[j]
+        j += 1
+        k += 1
+
+
+if __name__ == '__main__':
+    elements = [
+        {'name': 'vedanth',   'age': 17, 'time_hours': 1},
+        {'name': 'rajab', 'age': 12,  'time_hours': 3},
+        {'name': 'vignesh',  'age': 21,  'time_hours': 2.5},
+        {'name': 'chinmay',  'age': 24,  'time_hours': 1.5},
+        {'name': 'surya',  'age': 28,  'time_hours': 2},
+    ]
+    merge_sort(elements, key='age', descending=True)
+    print(elements)

@@ -147,11 +147,30 @@ Run time complexity to search for k will be O(log n)
 '''
 
 '''
-QUICK SORT - Divide and Conquer Type
+QUICK SORT - Divide and Conquer Type - O(n^2)
 Hoare Partition Scheme - left most element - pivot
 Lomuto Partition Scheme - right most element - pivot
 Select 1st index - pivot, put that in the correct position
 such that left side elements < pivot, right side elements > pivot - Repeat this.
 Putting the pivot in the right position - partition 
 Two pointers - start, end. start will be looking for elements greater than pivot, end is looking for elements less than pivot, once we find them swap them.
+'''
+
+
+'''
+MERGE SORT - O(n logn)
+Merge sort is a sorting algorithm that gives time complexity of O(nlogn) and thus performs better than insertion sort, bubble sort etc. In this data structures and algorithm video in python, we will go over how exactly merge sort works, implement merge sort in python and at the end there will be an exercise for you for practice.
+'''
+
+'''
+Shell sort - O(n^2) O(n log^2 n) is a customization over insertion sort. Insertion sort requires many swaps and comparisons if heavy elements are located towards the end of an array. Shell sort will initially sort subarrays that are equal distance apart. The distance here is referred to as a gap. We will than keep on reducing the gap until it is 1. With gap=1 it becomes insertion sort but this time due to optimization we have performed earlier, sorting the array would require very less  comparisons and element swaps.
+
+1. Start with gap = n/2 and sort sub arrays
+2. Keep reducing the gap by n/2 in and keep on sorting subarrays
+3. Last iteration should have gap=1. At this point it is same as insertion sort.
+'''
+
+
+'''
+Selection sort is a simple algorithm for sorting, it gives o(n^2) BIG O complexity. In this video we will go over some theory behind selection sort and implement in python. At the end of the video we will have an exercise for you to solve.
 '''

@@ -1,0 +1,30 @@
+Graphs will have edges and nodes
+1. Directed
+2. Undirected
+3. Weighted
+
+Neighbor node is any node adjacent to a node and can be reachable from it.
+
+Adjaceny List is used to represent the data of a graph
+
+a --> c
+|
+|
+v
+b <-- e
+|
+|
+v
+d <-- f
+
+To traverse through a grapgh we can use the following traversals
+1. Depth First Search traversal
+2. Breadth First Search traversal
+
+DFS: Uses a Stack
+Go in a single direction from a-->b-->d and then a-->c-->e-->b-->d
+
+BFS: Uses a Queue
+Goes to all the neighbours and do the same recursively
+a-->c or a-->b to start with and go to the corresponding neighbours
+
