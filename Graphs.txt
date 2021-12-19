@@ -28,3 +28,11 @@ BFS: Uses a Queue
 Goes to all the neighbours and do the same recursively
 a-->c or a-->b to start with and go to the corresponding neighbours
 
+Acyclic Graph:
+Graph with no possible cycles in it.
+
+Time and space complexity:
+let n # of nodes, e # of edges
+To traverse the graph, we will n - nodes and n^2 edges to cover
+Time - o(n^2)
+Space - o(n)
