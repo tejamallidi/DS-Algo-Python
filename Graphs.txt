@@ -34,5 +34,16 @@ Graph with no possible cycles in it.
 Time and space complexity:
 let n # of nodes, e # of edges
 To traverse the graph, we will n - nodes and n^2 edges to cover
-Time - o(n^2)
+Time - o(e)
 Space - o(n)
+
+For any problem: 
+check if the graph is acyclic or cyclic
+check whether we got a direct adjacency list or an edge list, which we have to convert to an adjacency list 
+if the graph is cyclic, make sure to note the visited nodes to avoid infinite loop
+
+
+Count Connected Components:
+Count the connected components using a count variable with the help of an iteration over all the nodes in the graph
+
+** Check for the type of data in adjacency list
