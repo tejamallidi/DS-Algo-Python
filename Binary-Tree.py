@@ -1,3 +1,7 @@
+import queue
+from Queue import Queue
+
+
 class BinarySearchTree:
     def __init__(self, data):
         self.data = data
@@ -72,6 +76,21 @@ class BinarySearchTree:
         elements.append(self.data)
 
         return elements
+
+    def bread_first_traversal(self):
+        if self is None:
+            return
+
+        queue = Queue()
+        queue.enqueue(self)
+
+        while queue.size() > 0:
+            node = queue.dequeue()
+            print(node.data)
+            if node.left is not None:
+                queue.enqueue(node.left)
+            if node.right is not None:
+                queue.enqueue(node.right)
 
     def search(self, val):
         # if root node is the val
@@ -159,15 +178,20 @@ if __name__ == '__main__':
     # print("Min:", numbers_tree.find_min())
     # print("Max:", numbers_tree.find_max())
     # print("Sum:", numbers_tree.calculate_sum())
-    print("In order traversal before deleting 23:",
-          numbers_tree.in_order_traversal())
+    # print("In order traversal before deleting 23:",
+    #       numbers_tree.in_order_traversal())
     # print("Pre order traversal:", numbers_tree.pre_order_traversal())
     # print("Post order traversal:", numbers_tree.post_order_traversal())
-    numbers_tree.delete(17)
-    print("In order traversal after deleting 23:",
-          numbers_tree.in_order_traversal())
+    numbers_tree.bread_first_traversal()
+    # numbers_tree.delete(17)
+    # print("In order traversal after deleting 23:",
+    #       numbers_tree.in_order_traversal())
     # countries = ['India', 'USA', 'Germany', 'China', 'Sri Lanka', 'Pakistan']
     # country_tree = build_tree(countries)
     # print(country_tree.in_order_traversal())
     # print(country_tree.search('USA'))
     # print(country_tree.search('UK'))
+
+# n,l,r - pre
+# l,n,r - in
+# l,r,n - post
